@@ -12,5 +12,8 @@ url = "https://{0}/mod_mu/users?key={1}&node_id=".format(YOUR_SSPanel_address, Y
 
 while True:
         for node_id in range(node_id_start, node_id_end):
-                requests.get(url + str(node_id))
+                try:
+                        requests.get(url + str(node_id))
+                except:
+                        pass
         time.sleep(waiting_time)
